@@ -1,0 +1,1 @@
+This directory contains different python scripts of which the first is to write a program that imports the function def add(a, b): from the file add_0.py and prints the result of the addition 1 + 2 = 3
