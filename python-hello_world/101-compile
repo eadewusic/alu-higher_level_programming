@@ -1,9 +1,2 @@
 #!/bin/bash
-import py_compile
-import os
-
-pyfile = os.environ.get('PYFILE')
-pyfilec = pyfile + 'c'
-
-print(f"Compiling {pyfile} ...")
-py_compile.compile(pyfile, cfile=pyfilec, doraise=True)
+python -m py_compile "$PYFILE"
