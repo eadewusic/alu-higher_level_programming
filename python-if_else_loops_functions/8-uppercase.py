@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-uppercase = __import__('8-uppercase').uppercase
 
-uppercase("best")
-uppercase("Best School 98 Battery street")
+def uppercase(str):
+    new_string = ""
+    for char in str:
+        if (ord(char) in range(97, 123)):
+            new_string += chr(ord(char) - 32)
+        else:
+            new_string += char
+    print("{new_string}".format(new_string=new_string))
