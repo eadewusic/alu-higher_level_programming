@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/bin/bash
 import py_compile
 import os
 
