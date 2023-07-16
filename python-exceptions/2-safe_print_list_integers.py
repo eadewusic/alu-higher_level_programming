@@ -10,4 +10,4 @@ def safe_print_list_integers(my_list=[], x=0):
         pass
     finally:
         print()
-        return printed
+        return min(printed, len(my_list))
