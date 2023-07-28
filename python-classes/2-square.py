@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# 2-square.py
 """This is a module that
 defines a python class called Square
 but does some extra work.
