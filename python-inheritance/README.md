@@ -1,0 +1,1 @@
+This directory contains different python scripts of which the first says to write a function that returns the list of available attributes and methods of an object with prototype: def lookup(obj), returns a list object and doesn't import any module
