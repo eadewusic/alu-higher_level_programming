@@ -8,7 +8,6 @@ class Square:
     that has a private instance method
     private instance method are created
     with __attribute(variable)name
-
     """
     def __init__(self, size):
         """
