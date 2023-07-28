@@ -1,0 +1,1 @@
+This directory contains different python scripts of which the first says to write a function that reads a text file (UTF8) and prints it to stdout with prototype: def read_file(filename=):, must use the with statement, doesn’t need to manage file permission or file doesn't exist exceptions and doesn't import any module.
