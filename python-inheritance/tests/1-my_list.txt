@@ -26,4 +26,4 @@ testing for new return
 >>> my_list.print_sorted()
 [3, 6]
 >>> print(my_list)
-[3, 6]
+[6, 3]
