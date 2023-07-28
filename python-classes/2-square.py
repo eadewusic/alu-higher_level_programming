@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """This is a module that
 defines a python class called Square
-but does some extra work.
-"""
+but does some extra work."""
 
 
 class Square():
