@@ -1,0 +1,29 @@
+test file for MyList()
+---------------------
+>>> MyList = __import__('1-my_list').MyList
+>>> newlist = []
+>>> my_list = MyList(newlist)
+>>> my_list.append(-9)
+>>> my_list.append(-23)
+>>> my_list.append(-28)
+>>> print(my_list)
+[-9, -23, -28]
+>>> my_list.print_sorted()
+[-28, -23, -9]
+
+testing empty list
+------------------
+>>> nwlist = []
+>>> my_list = MyList(nwlist)
+>>> my_list.print_sorted()
+[]
+
+testing for new return
+---------------------
+>>> my_list = MyList([])
+>>> my_list.append(6)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[3, 6]
+>>> print(my_list)
+[3, 6]

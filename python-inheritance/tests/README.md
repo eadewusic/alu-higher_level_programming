@@ -1,0 +1,1 @@
+This directory contains all my test files for Python-inheritance tasks. All the test files should be text files (extension: .txt) and should be executed by using this command: python3 -m doctest ./tests/*
