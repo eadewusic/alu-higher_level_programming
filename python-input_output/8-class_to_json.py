@@ -6,4 +6,4 @@
 def class_to_json(obj):
     '''Writes the dictionary description for json serialization of an object
     '''
-    return (obj.__dict__)`
+    return (obj.__dict__)
