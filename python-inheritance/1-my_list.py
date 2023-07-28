@@ -1,16 +1,16 @@
 #!/usr/bin/python3
+"""
+defining a class Mylist
+"""
 
-"""
-Defining a class MyList.
-"""
 
 class MyList(list):
     """
-    A class that inherits from the built-in list class.
+    class mylist
     """
     def print_sorted(self):
         """
-        Print the list in sorted (ascending) order.
+        print sorted list
         """
-        sorted_list = sorted(self)
-        print(sorted_listi)
+        a = sorted(self)
+        print(a)
