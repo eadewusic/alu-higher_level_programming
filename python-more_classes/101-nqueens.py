@@ -35,7 +35,8 @@ def solve_nqueens(N, row=0, board=[]):
     """
     if row == N:
         print([[i, board[i]] for i in range(N)])
-        return
+       return
+
 
     for col in range(N):
         if is_safe(board, row, col):
