@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def is_safe(board, row, col):
     """
     Check if placing a queen at the given row and column is safe.
@@ -11,18 +12,24 @@ def is_safe(board, row, col):
             return False
     return True
 
+
 def solve_nqueens(N, row=0, board=[]):
     """
     Recursive function to solve the N queens problem using backtracking.
 
     Args:
-        N (int): The size of the chessboard and the number of queens to be placed.
-        row (int): Current row being considered.
-        board (list): List representing the positions of queens on the board.
+        N (int):
+        The size of the chessboard and the number of queens to be placed.
+        row (int):
+        Current row being considered.
+        board (list):
+        List representing the positions of queens on the board.
 
     Prints:
-        Prints every possible solution to the N queens problem, one solution per line.
-        Each solution is represented as a list of (row, column) positions for the queens.
+        Prints every possible solution to the N queens problem,
+        one solution per line.
+        Each solution is represented as a list of
+        (row, column) positions for the queens.
     """
     if row == N:
         print([[i, board[i]] for i in range(N)])
