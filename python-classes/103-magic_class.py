@@ -3,6 +3,7 @@
 
 import math
 
+
 class MagicClass:
     """
     MagicClass represents a class that performs circle-related calculations.
