@@ -78,7 +78,7 @@ class SinglyLinkedList:
     """
     def __init__(self):
         """
-        Initialize an empty singly linked list with no head node.
+        Initialise an empty singly linked list with no head node.
         """
         self.head = None
 
@@ -96,7 +96,8 @@ class SinglyLinkedList:
             self.head = new_node
         else:
             current = self.head
-            while current.next_node is not None and current.next_node.data < value:
+            while current.next_node is not None and \
+        current.next_node.data < value:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
