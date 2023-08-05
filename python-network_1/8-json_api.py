@@ -22,7 +22,9 @@ if __name__ == "__main__":
         response = requests.post(url, data=data)
         json_response = response.json()
 
-        if isinstance(json_response, dict) and 'id' in json_response and 'name' in json_response:
+        if isinstance(json_response, dict) and \
+           'id' in json_response and \
+           'name' in json_response:
             print("[{}] {}".format(json_response['id'], json_response['name']))
         else:
             print("No result")
