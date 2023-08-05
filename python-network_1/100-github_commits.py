@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # 100-github_commits.py
 """
-This script fetches the last 10 commits of the specified repository
-by the given owner using the GitHub API.
+This script fetches the last 10 commits of the specified repository by the given owner
+using the GitHub API.
 
 Usage: python3 100-github_commits.py <repository> <owner>
 Example: python3 100-github_commits.py rails rails
