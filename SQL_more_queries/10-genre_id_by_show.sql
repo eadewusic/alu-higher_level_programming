@@ -4,7 +4,8 @@
 -- USE `#DB_NAME#`;
 
 -- List all shows with at least one genre linked
-SELECT tv_shows.title, tv_show_genres.genre_id
-FROM tv_shows
-JOIN tv_show_genres ON tv_shows.id = tv_show_genres.tv_show_id
-ORDER BY tv_shows.title, tv_show_genres.genre_id;
+SELECT tvs.title, tvsg.genre_id
+FROM tv_shows AS tvs
+INNER JOIN tv_show_genres AS tvsg
+ON tvsg.show_id = tvs.id
+ORDER BY tvs.title, tvsg.genre_id;
