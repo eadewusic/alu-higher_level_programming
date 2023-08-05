@@ -8,7 +8,8 @@ CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 
 -- Step 3: Create the table "states" if it does not exist
 CREATE TABLE IF NOT EXISTS hbtn_0d_usa.cities (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(256) NOT NULL,
-    PRIMARY KEY (id)
-);
+	id INT AUTO_INCREMENT UNIQUE NOT NULL PRIMARY KEY,
+	state_id INT,
+	FOREIGN KEY(state_id) REFERENCES states(id),
+	name VARCHAR(256) NOT NULL 
+)ENGINE=InnoDB;
