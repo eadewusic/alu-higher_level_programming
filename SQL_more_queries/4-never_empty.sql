@@ -1,5 +1,4 @@
 -- Task: Create the table "id_not_null" in the specified database
-
 -- Use the specified database (provided as an argument to the mysql command)
 USE `#DB_NAME#`;
 
