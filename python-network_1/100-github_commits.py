@@ -1,13 +1,33 @@
 #!/usr/bin/python3
 # 100-github_commits.py
-"""This module or script
-fetches the last 10 commits of the
-specified repository by the given owner
-using the GitHub API.
+"""
+This script fetches the last 10 commits of the specified repository
+by the given owner using the GitHub API.
+
+Usage: python3 100-github_commits.py <repository> <owner>
+Example: python3 100-github_commits.py rails rails
 """
 
 import sys
 import requests
+
+def fetch_github_commits(repository, owner):
+    """
+    Fetches the last 10 commits of the specified repository by the given owner.
+
+    Args:
+        repository (str): The name of the GitHub repository.
+        owner (str): The name of the GitHub repository owner.
+
+    Returns:
+        list: A list of dictionaries containing the last 10 commits' data.
+    """
+    url = f'https://api.github.com/repos/{owner}/{repository}/commits'
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        response.raise_for_status()
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -16,16 +36,12 @@ if __name__ == "__main__":
 
     repository = sys.argv[1]
     owner = sys.argv[2]
-    url = f'https://api.github.com/repos/{owner}/{repository}/commits'
 
     try:
-        response = requests.get(url)
-        commits = response.json()
-
-        if isinstance(commits, list):
-            for commit in commits[:10]:
-                sha = commit.get('sha')
-                author_name = commit.get('commit', {}).get('author', {}).get('name')
-                print(f"{sha}: {author_name}")
-    except Exception as e:
-        print(e)
+        commits = fetch_github_commits(repository, owner)
+        for commit in commits[:10]:
+            sha = commit.get('sha')
+            author_name = commit.get('commit', {}).get('author', {}).get('name')
+            print(f"{sha}: {author_name}")
+    except requests.exceptions.RequestException as e:
+        print(f"Error: {e}")
