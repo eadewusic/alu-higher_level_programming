@@ -20,21 +20,21 @@ Matrix multiplication with non-numeric element in the matrices:
     >>> matrix_mul([[1, 2], ['a', 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: m_a should contain only integers or floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
     >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], ['b', 4]])
     Traceback (most recent call last):
         ...
-    TypeError: m_b should contain only integers or floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Matrix multiplication with non-rectangular matrices:
     >>> matrix_mul([[1, 2, 3], [4, 5], [6, 7, 8]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: each row of m_a must be of the same size or each row of m_b must be of the same size
+    ValueError: shapes (3, 2) and (2, 2) not aligned: 2 (dim 1) != 2 (dim 0)
 
 Matrix multiplication with incompatible dimensions:
     >>> matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6]])
     Traceback (most recent call last):
         ...
-    ValueError: m_a and m_b can't be multiplied
+    ValueError: shapes (2, 2) and (2, 3) not aligned: 2 (dim 1) != 2 (dim 0)
