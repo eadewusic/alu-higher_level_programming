@@ -6,6 +6,9 @@ The 0-add_integer module takes two integers or floats as arguments and returns t
 Usage
 =====
 
+Importing the add_integer function:
+    >>> from python-test_driven_development.add_integer import add_integer
+
 Adding two positive integers (a = 1 and b = 1)
     >>> add_integer(1, 1)
     2
