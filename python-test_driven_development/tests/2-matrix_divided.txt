@@ -1,0 +1,60 @@
+Test cases for 2-matrix_divided module
+======================================
+
+The 2-matrix_divided module divides all elements of a matrix by a given number.
+
+Usage
+=====
+
+Importing function from the module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Dividing all elements of a matrix by 3:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Dividing all elements of an empty matrix by 2:
+    >>> matrix = []
+    >>> matrix_divided(matrix, 2)
+    []
+
+Dividing all elements of a matrix by 0:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+Dividing elements of a non-matrix list by 2:
+    >>> matrix = [1, 2, 3]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Dividing elements of a matrix with unequal row sizes by 2:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5]
+    ... ]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+Dividing elements of a matrix by a non-numeric div:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 'abc')
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
