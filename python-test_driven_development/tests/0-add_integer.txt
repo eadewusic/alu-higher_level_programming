@@ -1,4 +1,5 @@
 # Test for integers addition
+>>> from __main__ import add_integer
 >>> add_integer(1, 2)
 3
 >>> add_integer(100, -2)
