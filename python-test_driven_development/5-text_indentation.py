@@ -6,6 +6,7 @@ Prototype: def text_indentation(text):
 You are not allowed to import any module
 """
 
+
 def text_indentation(text):
     """Print text with two new lines after each '.', '?', and ':'.
     Args:
