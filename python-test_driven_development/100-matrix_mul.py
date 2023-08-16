@@ -7,57 +7,51 @@ You are not allowed to import any module
 
 
 def matrix_mul(m_a, m_b):
-    """
-    Multiply two matrices
+    '''
+    Multiplies two matrices together
 
     Args:
-        m_a (list): First matrix
-        m_b (list): Second matrix
-
-    Returns:
-        list: Result of matrix multiplication
-    """
-
-    # Check if m_a and m_b are lists
-    if not isinstance(m_a, list) or not isinstance(m_b, list):
-        raise TypeError("m_a must be a list or m_b must be a list")
-
-    # Check if m_a and m_b are lists of lists
-    if not all(isinstance(row, list) for row in m_a) or not all(isinstance(row, list) for row in m_b):
-        raise TypeError("m_a must be a list of lists or m_b must be a list of lists")
-
-    # Check if m_a and m_b are not empty
-    if len(m_a) == 0 or len(m_b) == 0:
-        raise ValueError("m_a can't be empty or m_b can't be empty")
-
-    # Check if elements are integers or floats
-    for row in m_a:
-        if not all(isinstance(element, (int, float)) for element in row):
-            raise TypeError("m_a should contain only integers or floats")
-
-    for row in m_b:
-        if not all(isinstance(element, (int, float)) for element in row):
-            raise TypeError("m_b should contain only integers or floats")
-
-    # Check if rows have the same size
-    if any(len(row) != len(m_a[0]) for row in m_a) or any(len(row) != len(m_b[0]) for row in m_b):
-        raise TypeError("each row of m_a must be of the same size or each row of m_b must be of the same size")
-
-    # Check if matrices can be multiplied
-    if len(m_a[0]) != len(m_b):
+       m_a (list of list of integers/floats): The first matrix
+       m_a (list of lists of integers/floats): The second matrix
+    '''
+    if not (isinstance(m_a, list)):
+        raise TypeError("m_a must be a list")
+    elif not (all(map(lambda x: isinstance(x, list), m_a))):
+        raise TypeError("m_a must be a list of lists")
+    elif ((len(m_a) == 0) or (sum(map(lambda x: len(x), m_a)) == 0)):
+        raise ValueError("m_a can't be empty")
+    elif not (all(map(lambda x: all(map(lambda y: isinstance(y, (float, int)), x)), m_a))):
+        raise TypeError("m_a should contain only integers or floats")
+    elif not (all(map(lambda x: len(m_a[0]) == len(x), m_a))):
+        raise TypeError("each row of m_a must be of the same size")
+    if not (isinstance(m_b, list)):
+        raise TypeError("m_b must be a list")
+    elif not (all(map(lambda x: isinstance(x, list), m_b))):
+        raise TypeError("m_b must be a list of lists")
+    elif ((len(m_b) == 0) or (sum(map(lambda x: len(x), m_b)) == 0)):
+        raise ValueError("m_b can't be empty")
+    elif not (all(map(lambda x: all(map(lambda y: isinstance(y, (float, int)), x)), m_b))):
+        raise TypeError("m_b should contain only integers or floats")
+    elif not (all(map(lambda x: len(m_b[0]) == len(x), m_b))):
+        raise TypeError("each row of m_b must be of the same size")
+    if (len(m_a[0]) != len(m_b)):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    # Perform matrix multiplication
-    result = [[0 for _ in range(len(m_b[0]))] for _ in range(len(m_a))]
+    inverted_b = []
+    for r in range(len(m_b[0])):
+        new_row = []
+        for c in range(len(m_b)):
+            new_row.append(m_b[c][r])
+        inverted_b.append(new_row)
 
-    for i in range(len(m_a)):
-        for j in range(len(m_b[0])):
-            for k in range(len(m_b)):
-                result[i][j] += m_a[i][k] * m_b[k][j]
+        new_matrix = []
+        for row in m_a:
+            new_row = []
+            for col in inverted_b:
+                prod = 0
+                for i in range(len(inverted_b[0])):
+                    prod += row[i] * col[i]
+                new_row.append(prod)
+            new_matrix.append(new_row)
 
-    return result
-
-# Test cases
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+        return new_matrix
