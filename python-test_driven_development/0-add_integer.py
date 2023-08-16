@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 This module defines a function for adding two integers.
+Prototype: def add_integer(a, b=98)
+You are not allowed to import any module
 """
 
 
