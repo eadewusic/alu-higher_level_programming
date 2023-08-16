@@ -6,6 +6,7 @@ Prototype: def print_square(size):
 You are not allowed to import any module
 """
 
+
 def print_square(size):
     """Print a square with the # character.
     Args:
