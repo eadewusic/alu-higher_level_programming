@@ -1,5 +1,5 @@
 # Test for integers addition
->>> from 0-add_integer import add_integer
+>>> from add_integer import add_integer
 >>> add_integer(1, 2)
 3
 >>> add_integer(100, -2)
@@ -16,3 +16,15 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
+# Test for float overflow
+>>> add_integer(1e1000, 2)
+Traceback (most recent call last):
+...
+OverflowError: int too large to convert to float
+
+# Test for converting float NaN to integer
+>>> add_integer(float("nan"), 2)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
