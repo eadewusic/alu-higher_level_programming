@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines a function that prints 'My name is <first name> <last name>'
+This module defines a function that
+prints 'My name is <first name> <last name>'
 Prototype: def say_my_name(first_name, last_name=""):
 You are not allowed to import any module
 """
