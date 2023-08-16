@@ -1,5 +1,4 @@
 # Test for integers addition
->>> from python-test_driven_development.add_integer import add_integer
 >>> add_integer(1, 2)
 3
 >>> add_integer(100, -2)
