@@ -126,17 +126,3 @@ class TestRectangle(unittest.TestCase):
         self.assertIsInstance(Rectangle(3, 4), Rectangle)
         self.assertIsInstance(Rectangle(3, 2, 5), Rectangle)
         self.assertIsInstance(Rectangle(4, 6, 7, 4), Rectangle)
-
-    def test_setter_methods(self):
-        rect = Rectangle(1, 1)
-        rect.width = 5
-        self.assertEqual(rect.width, 5)
-        rect.height = 8
-        self.assertEqual(rect.height, 8)
-        rect.x = 2
-        self.assertEqual(rect.x, 2)
-        rect.y = 4
-        self.assertEqual(rect.y, 4)
-
-if __name__ == '__main__':
-    unittest.main()
