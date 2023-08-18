@@ -26,9 +26,15 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 2, 3, "4")
 
-    def test_reactangle_with_complete_correct_args(self):
-        self.base4 = Rectangle(1, 2, 3, 4, 5)
-        self.assertEqual(self.base4.id, 5)
+    def test_rectangle_with_incomplete_correct_args(self):
+        rectangle1 = Rectangle(1, 2)
+        rectangle2 = Rectangle(1, 2, 3)
+        self.assertEqual(rectangle1.id, 41)
+        self.assertEqual(rectangle2.id, 42)
+
+    def test_rectangle_with_complete_correct_args(self):
+        rectangle = Rectangle(1, 2, 3, 4)
+        self.assertEqual(rectangle.id, 43)
 
     def test_rectangle_for_value_error(self):
         with self.assertRaises(ValueError):
@@ -120,3 +126,17 @@ class TestRectangle(unittest.TestCase):
         self.assertIsInstance(Rectangle(3, 4), Rectangle)
         self.assertIsInstance(Rectangle(3, 2, 5), Rectangle)
         self.assertIsInstance(Rectangle(4, 6, 7, 4), Rectangle)
+
+    def test_setter_methods(self):
+        rect = Rectangle(1, 1)
+        rect.width = 5
+        self.assertEqual(rect.width, 5)
+        rect.height = 8
+        self.assertEqual(rect.height, 8)
+        rect.x = 2
+        self.assertEqual(rect.x, 2)
+        rect.y = 4
+        self.assertEqual(rect.y, 4)
+
+if __name__ == '__main__':
+    unittest.main()
