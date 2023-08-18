@@ -26,7 +26,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 2, 3, "4")
 
-    def test_reactangle_with_complete_correct_args(self):
+    def test_rectangle_with_complete_correct_args(self):
         self.base4 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(self.base4.id, 5)
 
