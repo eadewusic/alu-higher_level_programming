@@ -2,4 +2,4 @@
 
 // #!/usr/bin/node
 
-myVar = 333;
+let myVar = 333;
