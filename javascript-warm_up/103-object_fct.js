@@ -3,8 +3,8 @@
 const myObject = {
   type: 'object',
   value: 12,
-  incr: function incr() {
-    this.value++;
+  incr: () => {
+    this.value++; // Use arrow function to maintain 'this' context
   }
 };
 
