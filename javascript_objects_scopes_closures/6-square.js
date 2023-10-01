@@ -3,7 +3,7 @@
 const ParentSquare = require('./5-square'); // Import the parent Square class
 
 class Square extends ParentSquare {
-  charPrint(c) {
+  charPrint (c) {
     if (c === undefined) {
       c = 'X';
     }
