@@ -6,7 +6,7 @@ const dict = require('./101-data').dict;
 const userByOccurrence = {};
 
 // Iterate through the original dictionary
-for (let userId in dict) {
+for (const userId in dict) {
   const occurrence = dict[userId];
 
   // Check if the occurrence exists in the new dictionary
