@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
 const request = require('request');
-const apiUrl = process.argv[2]; // The API URL is the first argument passed to the script
-request(apiUrl, (error, response, body) => {
+
+request(process.argv[2], function (error, response, body) {
   if (!error && response.statusCode === 200) {
     const films = JSON.parse(body).results;
     const characterID = '18'; // Character ID for Wedge Antilles
