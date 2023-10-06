@@ -1,28 +1,22 @@
 #!/usr/bin/node
 
-// Import the 'request' module to make HTTP requests
-const request = require('request');
-const fs = require('fs'); // Import the 'fs' module to work with the file system
+// Import the 'process' module to access command-line arguments
+const { argv } = require('process');
+const request = require('request'); // Import the 'request' module to make HTTP requests
 
-// Retrieve the URL to request from the command line arguments
-const url = process.argv[2];
-
-// Retrieve the file path to store the body response from the command line arguments
-const filePath = process.argv[3];
-
-// Make a GET request to the specified URL
-request(url, function (error, response, body) {
-  if (!error && response.statusCode === 200) {
-    // If the request is successful (status code 200), write the response body to a file
-    fs.writeFile(filePath, body, 'utf-8', function (err) {
-      if (err) {
-        console.error(`Error writing to the file: ${err}`);
-      } else {
-        console.log(`The contents of the webpage have been saved to ${filePath}`);
-      }
-    });
-  } else {
-    // Handle errors if the request fails
-    console.error(error || `Failed to fetch data. Status code: ${response.statusCode}`);
+request(argv[2], (error, response, body) => {
+  if (error) {
+    // If there's an error during the request, log the error
+    console.log(error);
+    return;
   }
+  const fs = require('fs'); // Import the 'fs' module to work with the file system
+
+  // Write the response body (webpage content) to the specified file
+  fs.writeFile(argv[3], body, (err) => {
+    if (err) {
+      // If there's an error while writing to the file, log the error
+      console.log(err);
+    }
+  });
 });
