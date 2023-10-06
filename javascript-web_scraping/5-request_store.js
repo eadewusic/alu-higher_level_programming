@@ -11,7 +11,7 @@ request(argv[2], (error, response, body) => {
     console.log(error);
     return; // Exit the script if an error occurs
   }
-  
+
   const fs = require('fs'); // Import the 'fs' module to work with the file system
 
   // Write the response body (webpage content) to the file specified as the second command-line argument (argv[3])

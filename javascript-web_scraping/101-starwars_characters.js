@@ -27,14 +27,13 @@ request(apiUrl, (error, response, body) => {
     // Execute the promise to fetch character data in order
     fetchCharacterDataInOrder()
       .catch((err) => console.error(`Failed to fetch character data: ${err}`));
-
   } else {
     console.error(error || `Failed to fetch movie data. Status code: ${response.statusCode}`);
   }
 });
 
 // Function to fetch character data and return a promise
-function fetchCharacterData(characterURL) {
+function fetchCharacterData (characterURL) {
   return new Promise((resolve, reject) => {
     request(characterURL, (charError, charResponse, charBody) => {
       if (!charError && charResponse.statusCode === 200) {
