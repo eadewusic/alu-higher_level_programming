@@ -10,7 +10,3 @@
 - You must use JQuery version 3.x
 - You are not allowed to use `var`
 - HTML should not reload for each action: DOM manipulation, update values, fetch data…
-
-## Code Style
-
-[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
