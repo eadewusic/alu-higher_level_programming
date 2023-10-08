@@ -8,7 +8,7 @@ $(document).ready(function() {
     const languageCode = $('#language_code').val();
 
     // Define the URL to fetch the translation
-    const apiUrl = `https://www.fourtonfish.com/hellosalut/hello/?lang=${languageCode}`;
+    const apiUrl = `http://localhost:8080/https://www.fourtonfish.com/hellosalut/hello/?lang=${languageCode}`;
     // Note: The `?lang=${languageCode}` part of the URL is where the language code you input is inserted into the URL to request the translation in the desired language to allow the API to provide translations in different languages
 
     // Use the jQuery AJAX function to make a GET request to the URL

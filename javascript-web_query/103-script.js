@@ -1,16 +1,20 @@
 #!/usr/bin/node
 // This JavaScript script fetches and prints the translation of "Hello" based on the language code using the JQuery API.
+
 $(document).ready(function() {
-    // Define the API endpoint
-    const endpoint = 'https://www.fourtonfish.com/hellosalut/hello/';
+    // Define the API URL for the translation service
+    const apiURL = 'https://www.fourtonfish.com/hellosalut/hello/';
+    
+    // Update the endpoint to use the local Express server's proxy route
+    const endpoint = 'http://localhost:8080/proxy?lang=';
   
     // Define a function to fetch and display the translation
     function fetchTranslation() {
       // Get the language code from INPUT#language_code
       const lang = $('#language_code').val();
   
-      // Make a GET request to the API endpoint with the selected language code
-      $.get(endpoint + lang.toString(), function (data) {
+      // Make a GET request to the API URL with the selected language code
+      $.get(apiURL + lang.toString(), function (data) {
         // Update DIV#hello with the fetched translation
         $('#hello').text(data.hello);
       });
