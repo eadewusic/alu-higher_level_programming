@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "cors-anywhere": "^0.4.4"
+    "cors-anywhere": "^0.4.4",
+    "jquery": "^3.7.1"
   }
 }
