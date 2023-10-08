@@ -9,6 +9,7 @@ $(document).ready(function() {
   
       // Define the URL to fetch the translation
       const apiUrl = `https://www.fourtonfish.com/hellosalut/hello/?lang=${languageCode}`;
+      // Note: The `?lang=${languageCode}` part of the URL is where the language code you input is inserted into the URL to request the translation in the desired language. This allows the API service to provide translations in different languages based on the language code provided in the URL. So, the presence of the languagecode in the URL is essential to make language-specific translations possible.
   
       // Use the jQuery AJAX function to make a GET request to the URL
       $.ajax({
